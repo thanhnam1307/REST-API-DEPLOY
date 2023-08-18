@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,5 +25,5 @@ urlpatterns = [
     path('api/products/', include('products.urls')),
     path('api/v2/', include('cfehome.routers'))
 ]
-
+urlpatterns += staticfiles_urlpatterns()
 # localhost:8000/api/
